@@ -11,16 +11,16 @@ import jakarta.persistence.Table;
 public class Aluno {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Integer id;
   private String nome;
   private String dataNascimento;
   private String email;
 
-  public int getId() {
+  public Integer getId() {
     return this.id;
   }
 
-  public void setId(int id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
