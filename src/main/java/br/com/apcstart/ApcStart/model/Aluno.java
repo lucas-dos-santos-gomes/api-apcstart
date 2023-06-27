@@ -1,5 +1,7 @@
 package br.com.apcstart.ApcStart.model;
 
+import java.sql.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,8 +15,8 @@ public class Aluno {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   private String nome;
-  private String dataNascimento;
   private String email;
+  private Date dataNascimento;
 
   public Integer getId() {
     return this.id;
@@ -32,11 +34,11 @@ public class Aluno {
     this.nome = nome;
   }
 
-  public String getDataNascimento() {
+  public Date getDataNascimento() {
     return dataNascimento;
   }
 
-  public void setDataNascimento(String dataNascimento) {
+  public void setDataNascimento(Date dataNascimento) {
     this.dataNascimento = dataNascimento;
   }
 
