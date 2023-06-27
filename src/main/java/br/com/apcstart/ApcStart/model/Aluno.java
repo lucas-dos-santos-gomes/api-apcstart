@@ -15,8 +15,8 @@ public class Aluno {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   private String nome;
-  private String email;
   private Date dataNascimento;
+  private String email;
 
   public Integer getId() {
     return this.id;
