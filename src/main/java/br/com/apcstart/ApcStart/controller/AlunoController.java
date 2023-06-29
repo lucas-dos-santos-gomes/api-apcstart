@@ -40,13 +40,13 @@ public class AlunoController {
   @PutMapping
   public String atualizarAluno(@RequestBody Aluno aluno) {
     alunoRepository.save(aluno);
-    return "Aluno atualizado com sucesso!";
+    return "Os dados do pedagogo foram atualizados!";
   }
 
   // DELETE
   @DeleteMapping("/{id}")
   public String deletarAluno(@PathVariable("id") int id) {
     alunoRepository.deleteById(id);
-    return "Aluno apagado com sucesso!";
+    return "Aluno descadastrado!";
   }
 }

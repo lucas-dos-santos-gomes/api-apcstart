@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_pedagoga")
-public class Pedagoga {
+public class Pedagogo {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
