@@ -14,13 +14,13 @@ import jakarta.persistence.Table;
 public class Pedagoga {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  Integer id;
+  private Integer id;
   @Nonnull
-  String nome;
-  String email;
-  String senha;
-  Date dataNascimento;
-  String diploma;
+  private String nome;
+  private String email;
+  private String senha;
+  private Date dataNascimento;
+  private String diploma;
 
   public Integer getId() {
     return this.id;
