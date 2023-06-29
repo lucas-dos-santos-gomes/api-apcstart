@@ -15,8 +15,9 @@ public class Aluno {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   private String nome;
-  private Date dataNascimento;
   private String email;
+  private String senha;
+  private Date dataNascimento;
 
   public Integer getId() {
     return this.id;
@@ -34,19 +35,27 @@ public class Aluno {
     this.nome = nome;
   }
 
-  public Date getDataNascimento() {
-    return dataNascimento;
-  }
-
-  public void setDataNascimento(Date dataNascimento) {
-    this.dataNascimento = dataNascimento;
-  }
-
   public String getEmail() {
     return email;
   }
 
   public void setEmail(String email) {
     this.email = email;
+  }
+
+  public String getSenha() {
+    return senha;
+  }
+
+  public void setSenha(String password) {
+    this.senha = password;
+  }
+
+  public Date getDataNascimento() {
+    return dataNascimento;
+  }
+
+  public void setDataNascimento(Date dataNascimento) {
+    this.dataNascimento = dataNascimento;
   }
 }
