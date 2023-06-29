@@ -40,7 +40,7 @@ public class PedagogoController {
   
   @DeleteMapping("/{id}")
   public String deletarPedagogo(@PathVariable("id") int id) {
-    pedagogoRepository.deleteById(id);;
+    pedagogoRepository.deleteById(id);
     return "Pedagogo descadastrado!";
   }
 }
