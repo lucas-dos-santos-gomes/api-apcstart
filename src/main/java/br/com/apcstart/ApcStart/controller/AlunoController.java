@@ -2,6 +2,7 @@ package br.com.apcstart.ApcStart.controller;
 
 import br.com.apcstart.ApcStart.model.Aluno;
 import br.com.apcstart.ApcStart.repository.AlunoRepository;
+import br.com.apcstart.ApcStart.service.AlunoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,6 +22,9 @@ public class AlunoController {
   @Autowired
   private AlunoRepository alunoRepository;
 
+  @Autowired
+  private AlunoService alunoService;
+
   // CRUD - CREATE , READ , UPDATE , DELETE
 
   // CREATE
@@ -34,6 +38,11 @@ public class AlunoController {
   @GetMapping
   public List<Aluno> mostrarAlunos() {
     return alunoRepository.findAll();
+  }
+
+  @GetMapping("/chamar/{email}")
+  public Aluno mostrarPorEmail(@PathVariable String email) {
+    return alunoService.findByEmail(email);
   }
 
   // UPDATE
