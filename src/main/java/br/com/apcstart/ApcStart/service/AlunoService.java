@@ -12,12 +12,20 @@ public class AlunoService {
   @Autowired
   private AlunoRepository alunoRepository;
 
-  public Aluno findByEmail(String email) {
+  public String findByEmail(String email, String senha) {
     for(Aluno aluno: alunoRepository.findAll()) {
       if(aluno.getEmail().equals(email)) {
-        return aluno;
+        return conferirSenha(aluno, senha);
       }
     }
-    return null;
+    return "Esse e-mail não foi cadastrado";
+  }
+
+  public String conferirSenha(Aluno aluno, String senha) {
+    if(aluno.getSenha().equals(senha)) {
+      return "Login realizado com sucesso!";
+    } else {
+      return "Senha incorreta!";
+    }
   }
 }

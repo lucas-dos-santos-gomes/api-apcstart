@@ -40,9 +40,9 @@ public class AlunoController {
     return alunoRepository.findAll();
   }
 
-  @GetMapping("/{email}")
-  public Aluno validarLogin(@PathVariable String email) {
-    return alunoService.findByEmail(email);
+  @GetMapping("/{email}/{senha}")
+  public String validarLogin(@PathVariable String email, @PathVariable String senha) {
+    return alunoService.findByEmail(email, senha);
   }
 
   // UPDATE
