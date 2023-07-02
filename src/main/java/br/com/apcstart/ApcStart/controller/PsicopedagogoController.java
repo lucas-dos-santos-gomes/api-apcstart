@@ -14,12 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.apcstart.ApcStart.model.Psicopedagogo;
 import br.com.apcstart.ApcStart.repository.PsicopedagogoRepository;
+import br.com.apcstart.ApcStart.service.PsicopedagogoService;
 
 @RestController
 @RequestMapping("/psicopedagogo")
 public class PsicopedagogoController {
   @Autowired
   private PsicopedagogoRepository psicopedagogoRepository;
+
+  @Autowired
+  private PsicopedagogoService psicopedagogoService;
 
   @PostMapping
   public String cadastrarPsicopedagogo(@RequestBody Psicopedagogo psicopedagogo) {
@@ -30,6 +34,16 @@ public class PsicopedagogoController {
   @GetMapping
   public List<Psicopedagogo> mostrarPsicopedagogos() {
     return psicopedagogoRepository.findAll();
+  }
+
+  @GetMapping("/{email}")
+  public Psicopedagogo mostrarPorEmail(@PathVariable String email) {
+    return psicopedagogoService.findByEmail(email);
+  }
+  
+  @GetMapping("/{email}/{senha}")
+  public String validarLogin(@PathVariable String email, @PathVariable String senha) {
+    return psicopedagogoService.findByLogin(email, senha);
   }
   
   @PutMapping
