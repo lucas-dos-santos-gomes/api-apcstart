@@ -40,8 +40,8 @@ public class AlunoController {
     return alunoRepository.findAll();
   }
 
-  @GetMapping("/chamar/{email}")
-  public Aluno mostrarPorEmail(@PathVariable String email) {
+  @GetMapping("/{email}")
+  public Aluno validarLogin(@PathVariable String email) {
     return alunoService.findByEmail(email);
   }
 
