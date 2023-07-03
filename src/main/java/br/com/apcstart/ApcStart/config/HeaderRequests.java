@@ -1,4 +1,4 @@
-package br.com.apcstart.ApcStart.controller;
+package br.com.apcstart.ApcStart.config;
 
 import java.io.IOException;
 
