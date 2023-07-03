@@ -31,7 +31,7 @@ public class AlunoController {
   @PostMapping
   public String cadastrarAluno(@RequestBody Aluno aluno) {
     alunoRepository.save(aluno);
-    return "Aluno cadastrado com sucesso!";
+    return aluno.getNome() + ", seu cadastro foi um sucesso!";
   }
 
   // READ
